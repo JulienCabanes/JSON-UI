@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <tr ng-repeat="(key, value) in objData">
+    <td valign="top" class="json-label">
+      <span>{{ key }}:</span>
+    </td>
+    <td valign="top" class="json-value">
+      <span json-value="value"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="json-add-value text-right" json-add-value></td>
+  </tr>
+</table>

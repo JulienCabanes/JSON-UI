@@ -1,0 +1,31 @@
+{
+  "name": "json-ui",
+  "main": "dist/json-ui.min.js",
+  "version": "1.0.0",
+  "authors": [
+    "Julien Cabanès <julien.c@icloud.com>"
+  ],
+  "description": "JSON UI angular module for JSON editing",
+  "keywords": [
+    "angular",
+    "json",
+    "directive",
+    "editor",
+    "tool"
+  ],
+  "license": "BSD-2-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha",
+    "lodash": "~3.5.0",
+    "angular": "~1.4.5",
+    "angular-ui-tinymce": "https://github.com/JulienCabanes/ui-tinymce.git#master"
+  }
+}

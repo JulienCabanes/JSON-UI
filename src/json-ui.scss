@@ -1,0 +1,343 @@
+.json-ui {
+  background: white;
+
+  .json-label,
+  .json-field {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+
+  .json-field {
+    display: block;
+    padding: 0.75em;
+    padding: 0.4em;
+  }
+
+  input[type="number"] {
+    width: 126px;
+  }
+
+  td.json-label {
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  td.json-value {
+    width: 100%;
+    padding: 0;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .invisible {
+    margin: 0;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Test * /
+  .json-add-value {
+    form {
+      visibility: hidden;
+    }
+
+    &:hover form {
+      visibility: visible;
+    }
+  }
+  /*  */
+
+  /*  * /
+  tr:hover {
+    background: $hover-bg;
+
+    & > .json-label > span {
+      background: $hover-bg;
+      color: $hover-color;
+    }
+
+    td {
+
+    }
+  }
+  /*  */
+}
+
+
+@mixin json-ui-theme(
+  $bg: #333,
+  $bg-striped: #444,
+  $color: #ddd,
+  $border: #222,
+
+  $hover-bg: darken($bg, 10%),
+  $hover-color: #eee,
+
+  $field-border: #888,
+  $field-bg: #000,
+  $field-color: white
+) {
+
+  &,
+  .json-ui {
+    background: $bg;
+  }
+
+  .json-label,
+  .json-field {
+    color: $color;
+  }
+
+  .form-control {
+    &:not(:focus) {
+      border-color: $field-border;
+    }
+    background: $field-bg;
+    color: $field-color;
+  }
+
+  .table .table {
+    background: $bg;
+    background: rgba(black, 0.2);
+  }
+
+  tr:nth-child(2n) {
+    // background: $bg-striped;
+  }
+
+  table {
+    border: 0;
+  }
+
+  tr:first-child > td {
+    border-top: 0;
+  }
+
+  tr:last-child > td {
+    border-bottom: 0;
+  }
+
+  td:first-child {
+    border-left: 0;
+  }
+
+  td:last-child {
+    border-right: 0;
+  }
+
+  td {
+    border-width: 2px;
+    border-color: $border;
+  }
+}
+
+.json-ui--dark {
+  @include json-ui-theme(
+    $bg: #777,
+    $bg-striped: #444,
+    $color: #ddd,
+    $border: #222,
+
+    $hover-bg: #222,
+    $hover-color: #eee,
+
+    $field-border: #888,
+    $field-bg: #000,
+    $field-color: white
+  );
+}
+
+.json-ui--light {
+  @include json-ui-theme(
+    $bg: #fff,
+    $bg-striped: #eee,
+    $color: black,
+    $border: #eee,
+
+    $hover-bg: #222,
+    $hover-color: #eee,
+
+    $field-border: #ccc,
+    $field-bg: #fff,
+    $field-color: black
+  );
+}
+
+.json-ui--blue {
+  @include json-ui-theme(
+    $bg: #1b76f4,
+    $bg-striped: darken(#1b76f4, 10%),
+    $color: white,
+    $border: rgba(white, 0.2),
+
+    $hover-bg: darken(#1b76f4, 10%),
+    $hover-color: #eee,
+
+    $field-border: #ccc,
+    $field-bg: #fff,
+    $field-color: black
+  );
+}
+
+
+.json-ui--colored {
+  @include json-ui-theme(
+    $bg: #fff,
+    $bg-striped: #eee,
+    $color: white,
+    $border: #fff,
+
+    $hover-bg: #222,
+    $hover-color: #eee,
+
+    $field-border: #fff,
+    $field-bg: #fff,
+    $field-color: black
+  );
+
+  /* Funny... * /
+  tr:nth-last-child(2) > td {
+    background: rgba(black, 0.2) !important;
+  }
+
+  .json-add-value {
+    background: rgba(black, 0.4);
+  }
+  /*  */
+  .json-add-value {
+    padding: 0.25rem;
+    padding: 0.45rem;
+    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
+
+    .form-control,
+    .btn-secondary {
+      color: #fff;
+      background: rgba(black, 0.2);
+      border-color: rgba(black, 0.5);
+    }
+
+    .form-control::-webkit-input-placeholder {
+       color: #fff;
+    }
+
+    .form-control:-moz-placeholder {
+       color: #fff;
+    }
+
+    .form-control::-moz-placeholder {
+       color: #fff;
+    }
+
+    .form-control:-ms-input-placeholder {
+       color: #fff;
+    }
+
+    &:hover {
+      .form-control,
+      .btn-secondary {
+        color: #fff;
+        background: linear-gradient(top, rgba(white, 0.1), rgba(white, 0.4));
+      }
+    }
+
+    .form-control {
+      margin-right: 2px;
+
+      &:focus {
+        border-color: white;
+      }
+    }
+
+    select.form-control {
+      height: 2rem;
+    }
+
+    .form-control-sm {
+      // padding: .25rem .75rem;
+    }
+  }
+
+  .btn-secondary {
+    border-color: #ddd;
+  }
+
+  .btn-primary-outline {
+    &:not(:hover) {
+      background: white;
+    }
+  }
+  // From http://flatuicolors.com/
+
+  // Green to purple
+  $turquoise: #1abc9c;
+  $emerald: #2ecc71;
+  $green-sea: #16a085;
+  $nephritis: #27ae60;
+  $peter-river: #3498db;
+  $belize-hole: #2980b9;
+  $amethyst: #9b59b6;
+  $wisteria: #8e44ad;
+
+  // Yellow to red
+  $sun-flower: #f1c40f;
+  $orange: #f39c12;
+  $carrot: #e67e22;
+  $pumpkin: #d35400;
+  $alizarin: #e74c3c;
+  $pomegranate: #c0392b;
+
+  // Grays and graphites
+  $wet-asphalt: #34495e;
+  $midnight-blue: #2c3e50;
+  $clouds: #ecf0f1;
+  $silver: #bdc3c7;
+  $concrete: #95a5a6;
+  $asbestos: #7f8c8d;
+
+
+  .table {
+    background: $wet-asphalt;
+  }
+
+  .table .table {
+    background: $orange;
+  }
+
+  .table .table .table {
+    background: $wisteria;
+  }
+
+  .table .table .table .table {
+    background: $peter-river;
+  }
+
+  .table .table .table .table .table {
+    background: $emerald;
+  }
+
+  .table .table .table .table .table .table {
+    background: $alizarin;
+  }
+
+  .table .table .table .table .table .table .table {
+    background: $sun-flower;
+  }
+
+  .table .table .table .table .table .table .table .table {
+    background: $concrete;
+  }
+
+  .table .table .table .table .table .table .table .table .table {
+    background: $amethyst;
+  }
+
+  .table .table .table .table .table .table .table .table .table .table {
+    background: $midnight-blue;
+  }
+
+  .table .table .table .table .table .table .table .table .table .table .table {
+    background: $pomegranate;
+  }
+}

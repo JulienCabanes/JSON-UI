@@ -1,0 +1,17 @@
+<form ng-submit="pushValue(propType)" class="form-inline text-right">
+  <select ng-model="propType" class="form-control" ng-change="pushValue(propType)">
+    <option value="">Ajouter</option>
+    <option value="string">Texte</option>
+    <option value="number">Nombre</option>
+    <option value="bool">Booléen</option>
+    <option value="array">Tableau</option>
+    <option value="object">Objet</option>
+  </select>
+  <span ng-if="objData.length > 0" style="color: white;">
+    ou
+    <button type="button" ng-click="pushLastClone()" class="btn btn-secondary btn-sm">
+      dupliquer le dernier élément
+    </button>
+  </span>
+  <button type="submit" class="invisible">ok</button>
+</form>
