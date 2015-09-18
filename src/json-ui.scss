@@ -12,8 +12,26 @@
     padding: 0.4em;
   }
 
+  .json-boolean {
+    padding: 1em;
+  }
+
   input[type="number"] {
     width: 126px;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    border: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: transparent no-repeat center center;
+    background-size: 100% auto;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-247 248 17 17"><path d="M-233 250h1v14h-14v-14h14v1h-13v12h12v-13z" fill="#FFF"/></svg>');
+
+    &:checked {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"><path d="M14 5.76h1V16H1V2h8.393v1H2v12h12V5.76zM4.854 8.147l-.708.708 3.434 3.434L15.167.776l-.835-.55L7.42 10.712 4.854 8.146z" fill="#FFF"/></svg>');
+    }
   }
 
   td.json-label {
@@ -209,7 +227,7 @@
   .json-add-value {
     padding: 0.25rem;
     padding: 0.45rem;
-    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
+    background: linear-gradient(right, rgba(black, 0), rgba(black, 0.4));
 
     .form-control,
     .btn-secondary {

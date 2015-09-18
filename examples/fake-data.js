@@ -30,6 +30,10 @@ var schema = {
         items: {
           type: 'object',
           properties: {
+            isPublished: {
+              type: 'boolean',
+              value: true,
+            },
             author: {
               type: 'string',
               maxLength: 20

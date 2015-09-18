@@ -1,4 +1,4 @@
-angular.module('jcab.json-ui').directive('jsonAddValue', function() {
+angular.module('jcab.json-ui').directive('jsonAddValue', function(jsonDefaultValue) {
   return {
     restrict: 'A',
     templateUrl: 'json-ui/add-value.tpl.html',
@@ -16,26 +16,7 @@ angular.module('jcab.json-ui').directive('jsonAddValue', function() {
           return;
         }
 
-        var value;
-        switch(type) {
-          case 'string':
-            value = '';
-            break;
-          case 'number':
-            value = 0;
-            break;
-          case 'bool':
-            value = true;
-            break;
-          case 'array':
-            value = [];
-            break;
-          case 'object':
-            value = {};
-            break;
-        }
-
-        $scope.objData[$scope.propName] = value;
+        $scope.objData[$scope.propName] = jsonDefaultValue(type);
         $scope.propName = '';
       };
     }

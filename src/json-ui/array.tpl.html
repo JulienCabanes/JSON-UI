@@ -1,7 +1,7 @@
 <table class="table table-bordered">
   <tr ng-repeat="(key, value) in objData track by $index">
     <td valign="top" class="json-label">{{ key }}:</td>
-    <td valign="top" class="json-value" json-value="value"></td>
+    <td valign="top" class="json-value" json-value="objData[key]"></td>
   </tr>
   <tr>
     <td colspan="2" class="json-add-value text-right" json-push-value></td>

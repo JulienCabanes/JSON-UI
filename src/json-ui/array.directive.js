@@ -4,11 +4,6 @@ angular.module('jcab.json-ui').directive('jsonArray', function() {
     scope: {
       'objData': '=jsonArray'
     },
-    templateUrl: 'json-ui/array.tpl.html',
-    link: function($scope, $element, $attrs) {
-      $scope.add = function() {
-        $scope.objData.push(_.cloneDeep(_.last($scope.objData)));
-      };
-    }
+    templateUrl: 'json-ui/array.tpl.html'
   };
 });

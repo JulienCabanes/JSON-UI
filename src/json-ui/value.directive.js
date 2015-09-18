@@ -10,10 +10,11 @@ angular.module('jcab.json-ui').directive('jsonValue', function(recursiveDirectiv
           $scope.data = newValue;
         });
 
-        $scope.isObject = _.isPlainObject;
-        $scope.isArray = _.isArray;
         $scope.isString = _.isString;
         $scope.isNumber = _.isNumber;
+        $scope.isBoolean = _.isBoolean;
+        $scope.isArray = _.isArray;
+        $scope.isObject = _.isPlainObject;
       });
     }
   };
